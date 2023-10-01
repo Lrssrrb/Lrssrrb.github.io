@@ -879,6 +879,19 @@ span.single-timeline-horizontal.spacial-horizontal-line {width: 88px;}
     .pro_class1{
         margin-left: 30px;
     }
+    .is-3by2>img{
+        height: 350px;
+        width: 650px;
+        margin-top: 10px
+    }
+}
+
+@media (max-width: 1040px){
+    .is-3by2>img{
+        height: 100%;
+        width: 100%;
+        margin-top: 10px
+    }
 }
 
 section .title {
