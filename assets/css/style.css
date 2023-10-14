@@ -976,4 +976,35 @@ section .button button {
     color: #999fb3;
     list-style: disc;
 }
+
+.logo>img{
+    width: 30%;
+    height: 60px;
+}
+
+/* .icon-container p {
+    display: none; 
+  }
+  
+  .icon-container:hover img:nth-child(1) {
+    display: none;
+  }
+  
+  .icon-container:hover p {
+    display: block;
+  } */
+
+
+
+  .media-icons p {
+    display: none; 
+  }
+  
+  .media-icons:hover .fa-mobile {
+    display: none;
+  }
+  
+  .media-icons:hover p {
+    display: block;
+  }
 /*========================Thank you=================
