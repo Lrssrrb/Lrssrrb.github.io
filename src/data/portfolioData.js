@@ -1,7 +1,7 @@
-﻿export const personalInfo = {
+export const personalInfo = {
   name: "Luckiraj Sisodiya",
   brand: "LUCKIRAJ",
-  shortIntro: "Hey, I’m a Backend Java Developer.",
+  shortIntro: "Backend Java Developer | Java 17 | Spring Boot | Microservices",
   phone: "+91 93402 60293",
   email: "luckiraj.sisodiya@gmail.com",
   location: "Indore, Madhya Pradesh, India",
