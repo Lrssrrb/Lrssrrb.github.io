@@ -1,7 +1,7 @@
 ﻿export const personalInfo = {
   name: "Luckiraj Sisodiya",
   brand: "LUCKIRAJ",
-  role: "Backend Java Developer • Microservices & Event-Driven Systems",
+  shortIntro: "Hey, I’m a Backend Java Developer.",
   phone: "+91 93402 60293",
   email: "luckiraj.sisodiya@gmail.com",
   location: "Indore, Madhya Pradesh, India",
@@ -13,17 +13,19 @@
   aboutHeadline:
     "Backend Java Developer with 3+ years of experience architecting scalable microservices, middleware platforms, and high-throughput event-driven systems.",
   aboutDescription:
-    "Proven track record integrating 9+ third-party vendor APIs via Apache Kafka, asynchronous batch processing, and idempotent webhook workflows serving 300K+ (3L+) users per API call. Experienced in optimizing distributed caching with Redis, eliminating race conditions with scheduler locking, and improving observability through correlation-ID tracing and structured audit logging.",
+    "Progressed from QA & unit testing at IndusNet Technologies to owning core backend middleware services at Hyperface Technologies—integrating 9+ third-party APIs via Apache Kafka, async batching, and idempotent webhooks serving 300K+ (3L+) users per API call. Experienced in Redis caching, scheduler locking, correlation-ID tracing, and solo-building internal React 19 UIs for end-to-end team verification.",
 };
 
 export const skillCategories = [
   {
     title: "Languages",
+    type: "technical",
     colClass: "col-md-4",
-    skills: ["Java 17", "Groovy (4-5)", "React 19", "HTML5 / CSS3", "Python 3"],
+    skills: ["Java 17", "Groovy (4-5)", "React 19", "SQL", "HTML5 / CSS3", "Python 3"],
   },
   {
     title: "Frameworks & Testing",
+    type: "technical",
     colClass: "col-md-4",
     skills: [
       "Spring Boot",
@@ -36,30 +38,35 @@ export const skillCategories = [
   },
   {
     title: "Messaging & Databases",
+    type: "technical",
     colClass: "col-md-4",
     skills: ["Apache Kafka", "Redis", "MySQL", "Indexed Lookups"],
   },
   {
-    title: "System Design & Architecture",
+    title: "System Design & APIs",
+    type: "technical",
     colClass: "col-md-6",
     skills: [
-      "Microservices",
+      "Microservices Architecture",
       "Middleware Architecture",
       "Event-Driven Systems",
-      "Async & Batch Processing",
-      "Retry & Fallback",
+      "Idempotent Webhooks",
+      "REST / OpenAPI / Swagger",
+      "Distributed Tracing (X-Correlation-Id)",
       "Scheduler Locking",
     ],
   },
   {
-    title: "APIs & Observability",
+    title: "Soft Skills & Collaboration",
+    type: "soft",
     colClass: "col-md-6",
     skills: [
-      "REST / OpenAPI / Swagger",
-      "Idempotent Webhooks",
-      "Distributed Tracing (X-Correlation-Id)",
-      "Audit Logging",
-      "Git / Postman / Bruno",
+      "Cross-Functional Team Collaboration",
+      "Technical Documentation & Runbooks",
+      "End-to-End Module Ownership",
+      "Peer Code Review & Defect Triage",
+      "QA & DevOps Release Coordination",
+      "Problem Solving & Adaptability",
     ],
   },
 ];
@@ -105,20 +112,6 @@ export const experiences = [
 
 export const projects = [
   {
-    title: "Online Shopping Application (REST API)",
-    subtitle: "Layered Spring Boot E-Commerce Backend",
-    description:
-      "End-to-end e-commerce REST backend built with clean Controller-Service-DAO layering, session-based authentication, and relational persistence in MySQL.",
-    highlights: [
-      "7 REST Controllers: User, Customer, Product, Cart, Order, Address & Bank",
-      "Session-based authentication & role-separated workflows",
-      "Centralized GlobalExceptionHandler with standardized MyError payloads",
-      "Spring Data JPA & Hibernate entity mapping across 9 domain models",
-    ],
-    techStack: ["Java 17", "Spring Boot", "Spring Data JPA", "Hibernate", "MySQL", "REST API"],
-    githubUrl: "https://github.com/Lrssrrb/Online-shopping-application",
-  },
-  {
     title: "Blog Microservices Architecture (blog-micro)",
     subtitle: "Distributed 6-Service Spring Cloud Platform",
     description:
@@ -131,6 +124,48 @@ export const projects = [
     ],
     techStack: ["Java 17", "Spring Boot", "Spring Cloud", "API Gateway", "Eureka", "MySQL"],
     githubUrl: "https://github.com/Lrssrrb/blog-micro",
+  },
+  {
+    title: "Secure Blogging Platform REST API (blogApp)",
+    subtitle: "Spring Boot + JWT & Role-Based Security API",
+    description:
+      "Full-featured RESTful blogging backend secured with Spring Security and JWT token authentication, role-based admin controls, DTO validation, and file handling.",
+    highlights: [
+      "Stateless JWT authentication filter, token helper & custom UserDetailsService",
+      "6 REST Controllers: Auth, Admin, User, Post, Category & Comment",
+      "DTO payload separation, pagination responses & FileService image handling",
+      "Centralized GlobalExceptionHandler for validation & resource errors",
+    ],
+    techStack: ["Java 17", "Spring Boot", "Spring Security", "JWT", "Spring Data JPA", "MySQL"],
+    githubUrl: "https://github.com/Lrssrrb/blogApp",
+  },
+  {
+    title: "Banking & Account Microservices System",
+    subtitle: "Multi-Module Spring Boot Service Mesh",
+    description:
+      "Distributed banking backend splitting Account, Bank, and User domains into independent Spring Boot microservices coordinated via Service Registry and Connection modules.",
+    highlights: [
+      "5 Independent Services: Server, Connection, Account, Bank & User",
+      "Dedicated Controller, ServiceImpl, Repository & NotFoundException per domain",
+      "Centralized service registration & inter-service connection configuration",
+      "Modular Maven builds with isolated application configurations",
+    ],
+    techStack: ["Java 17", "Spring Boot", "Microservices", "Spring Data JPA", "Maven", "MySQL"],
+    githubUrl: "https://github.com/Lrssrrb/BankAccountUserNoSecurity",
+  },
+  {
+    title: "Online Shopping Application (REST API)",
+    subtitle: "Layered Spring Boot E-Commerce Backend",
+    description:
+      "End-to-end e-commerce REST backend built with clean Controller-Service-DAO layering, session-based authentication, and relational persistence in MySQL.",
+    highlights: [
+      "7 REST Controllers: User, Customer, Product, Cart, Order, Address & Bank",
+      "Session-based authentication & role-separated workflows",
+      "Centralized GlobalExceptionHandler with standardized MyError payloads",
+      "Spring Data JPA & Hibernate entity mapping across 9 domain models",
+    ],
+    techStack: ["Java 17", "Spring Boot", "Spring Data JPA", "Hibernate", "MySQL", "REST API"],
+    githubUrl: "https://github.com/Lrssrrb/Online-shopping-application",
   },
 ];
 
@@ -146,4 +181,3 @@ export const educationList = [
     degree: "Bachelor of Technology - Computer Science",
   },
 ];
-

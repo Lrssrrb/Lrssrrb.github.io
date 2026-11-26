@@ -1,5 +1,6 @@
 ﻿import { useState, useEffect } from "react";
 import { personalInfo } from "../data/portfolioData";
+import { openAndDownloadResume } from "../utils/resumeAction";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -8,18 +9,17 @@ export default function Navbar() {
   const [activeSection, setActiveSection] = useState("welcome-hero");
 
   const navItems = [
-    { label: "ABOUT ME", href: "#about", id: "about" },
-    { label: "SKILLS", href: "#skills", id: "skills" },
-    { label: "EXPERIENCE", href: "#experience", id: "experience" },
-    { label: "PROJECTS", href: "#profiles", id: "profiles" },
-    { label: "EDUCATION", href: "#education", id: "education" },
-    { label: "CONTACT", href: "#contact", id: "contact" },
+    { label: "Home", href: "#welcome-hero", id: "welcome-hero" },
+    { label: "About", href: "#about", id: "about" },
+    { label: "Skills", href: "#skills", id: "skills" },
+    { label: "Projects", href: "#profiles", id: "profiles" },
+    { label: "Contact", href: "#contact", id: "contact" },
   ];
 
   useEffect(() => {
     const handleScroll = () => {
       const y = window.scrollY;
-      setScrolled(y > 50);
+      setScrolled(y > 20);
 
       const docHeight =
         document.documentElement.scrollHeight - window.innerHeight;
@@ -43,13 +43,21 @@ export default function Navbar() {
     <header className="top-area">
       <div className="header-area">
         <nav
-          className={`navbar navbar-default navbar-fixed dark ${
-            scrolled ? "sticked" : "no-background"
+          className={`navbar navbar-default navbar-fixed dark sticky-top-nav ${
+            scrolled ? "sticked" : ""
           }`}
           style={{
-            backgroundColor: scrolled ? "#fff" : "transparent",
-            boxShadow: scrolled ? "0 2px 10px rgba(0,0,0,0.08)" : "none",
-            transition: "all 0.3s ease",
+            position: "fixed",
+            top: 0,
+            left: 0,
+            right: 0,
+            width: "100%",
+            zIndex: 1030,
+            backgroundColor: "#ffffff",
+            boxShadow: scrolled
+              ? "0 4px 16px rgba(0,0,0,0.1)"
+              : "0 2px 8px rgba(0,0,0,0.06)",
+            transition: "all 0.25s ease",
           }}
         >
           <div
@@ -90,6 +98,18 @@ export default function Navbar() {
                     </a>
                   </li>
                 ))}
+                <li className="smooth-menu">
+                  <a
+                    href={personalInfo.resumePath}
+                    onClick={(e) => {
+                      setMenuOpen(false);
+                      openAndDownloadResume(e, personalInfo.resumePath);
+                    }}
+                    className="nav-resume-link"
+                  >
+                    Resume
+                  </a>
+                </li>
               </ul>
             </div>
           </div>

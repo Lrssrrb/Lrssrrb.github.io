@@ -9,7 +9,7 @@ export default function Contact() {
   const handleSendEmail = () => {
     const gmailComposeUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(
       personalInfo.email
-    )}&su=${encodeURIComponent("Backend Engineering Opportunity")}`;
+    )}`;
     window.open(gmailComposeUrl, "_blank", "noopener,noreferrer");
   };
 
@@ -95,4 +95,5 @@ export default function Contact() {
     </section>
   );
 }
+
 

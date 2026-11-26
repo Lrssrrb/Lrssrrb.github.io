@@ -3,19 +3,33 @@ import { projects } from "../data/portfolioData";
 import { useReveal } from "../hooks/useReveal";
 
 const architectureSpecs = {
+  "Blog Microservices Architecture (blog-micro)": [
+    "blog-app-server           →  Eureka Service Registry",
+    "blog-app-api-gateway      →  Centralized Routing & Load Balancing",
+    "blog-app-user             →  User Profiles & Credentials",
+    "blog-app-post             →  Articles & Author Mapping",
+    "blog-app-category/comment →  Taxonomy & Discussion Threads",
+  ],
+  "Secure Blogging Platform REST API (blogApp)": [
+    "SecurityConfig + JwtAuthenticationFilter → Stateless Token Guard",
+    "AuthController & AdminController         → Login, Signup & Role Admin",
+    "PostController & CategoryController      → Paginated Content & FileService",
+    "UserController & CommentController       → Profile & Discussion Endpoints",
+    "GlobalExeptionHandler                    → Standardized ApiResponse Errors",
+  ],
+  "Banking & Account Microservices System": [
+    "ServerApplication      →  Service Discovery Registry",
+    "ConnectionApplication  →  ConnectionConfiguration & Routing",
+    "AccountApplication     →  Account Entity, AccRepo & ServiceImpl",
+    "BankApplication        →  Bank Entity, BankRepo & ServiceImpl",
+    "UserApplication        →  User Entity, UserRepo & NotFoundExeption",
+  ],
   "Online Shopping Application (REST API)": [
     "POST /api/users/login  →  Session Token Auth",
     "GET|POST /api/products  →  Catalog & Stock Filtering",
     "POST|PUT /api/carts     →  Cart Item & Quantity Sync",
     "POST /api/orders        →  Transactional Order Checkout",
     "@RestControllerAdvice   →  GlobalExceptionHandler (MyError)",
-  ],
-  "Blog Microservices Architecture (blog-micro)": [
-    "blog-app-server         →  Eureka Service Registry",
-    "blog-app-api-gateway    →  Centralized Routing & Load Balancing",
-    "blog-app-user           →  User Profiles & Credentials",
-    "blog-app-post           →  Articles & Author Mapping",
-    "blog-app-category/comment →  Taxonomy & Discussion Threads",
   ],
 };
 
@@ -103,16 +117,16 @@ export default function Projects() {
                         ))}
                       </div>
 
-                      {project.githubUrl && (
+                      <div className="project-links-row">
                         <a
                           href={project.githubUrl}
                           target="_blank"
-                          rel="noreferrer"
+                          rel="noopener noreferrer"
                           className="project-github-btn"
                         >
                           <i className="fab fa-github"></i> View Source on GitHub
                         </a>
-                      )}
+                      </div>
                     </div>
                   </div>
                 </div>

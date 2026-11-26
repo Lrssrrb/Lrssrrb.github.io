@@ -6,11 +6,19 @@ export default function Skills() {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [ref, visible] = useReveal();
 
-  const filterTabs = ["All", ...skillCategories.map((c) => c.title)];
-  const visibleCategories =
-    selectedCategory === "All"
-      ? skillCategories
-      : skillCategories.filter((c) => c.title === selectedCategory);
+  const filterTabs = [
+    "All",
+    "Technical Skills",
+    "Soft Skills",
+    ...skillCategories.map((c) => c.title),
+  ];
+
+  const visibleCategories = skillCategories.filter((c) => {
+    if (selectedCategory === "All") return true;
+    if (selectedCategory === "Technical Skills") return c.type === "technical";
+    if (selectedCategory === "Soft Skills") return c.type === "soft";
+    return c.title === selectedCategory;
+  });
 
   return (
     <section id="skills" className="skills">
@@ -19,7 +27,7 @@ export default function Skills() {
         className={`skill-content reveal-block ${visible ? "is-visible" : ""}`}
       >
         <div className="section-heading text-center">
-          <h2>technical skills</h2>
+          <h2>technical &amp; soft skills</h2>
         </div>
 
         <div className="container" style={{ marginTop: "32px" }}>
@@ -43,7 +51,9 @@ export default function Skills() {
               <div
                 key={category.title}
                 className={
-                  selectedCategory === "All" ? category.colClass : "col-md-8 col-md-offset-2"
+                  visibleCategories.length === 1
+                    ? "col-md-8 col-md-offset-2"
+                    : category.colClass
                 }
               >
                 <div className="skill-category-box">
