@@ -1,8 +1,10 @@
 ﻿import { useState } from "react";
 import { personalInfo } from "../data/portfolioData";
+import { useReveal } from "../hooks/useReveal";
 
 export default function Contact() {
   const [copied, setCopied] = useState(false);
+  const [ref, visible] = useReveal();
 
   const handleSendEmail = () => {
     const gmailComposeUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(
@@ -19,11 +21,17 @@ export default function Contact() {
 
   return (
     <section className="contact" id="contact">
-      <div className="content">
+      <div
+        ref={ref}
+        className={`content reveal-block ${visible ? "is-visible" : ""}`}
+      >
         <div className="title">
           <span>Don&apos;t be a stranger</span>
         </div>
         <div className="text">
+          <div className="availability-pill">
+            <span className="pulse-dot"></span> Available for Immediate Joining
+          </div>
           <div className="topic">Open to Backend &amp; Distributed Systems Roles</div>
           <p>
             Based in {personalInfo.location}. Feel free to reach out for backend
@@ -87,3 +95,4 @@ export default function Contact() {
     </section>
   );
 }
+

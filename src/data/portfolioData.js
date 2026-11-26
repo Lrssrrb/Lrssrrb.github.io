@@ -115,7 +115,7 @@ export const projects = [
       "Centralized GlobalExceptionHandler with standardized MyError payloads",
       "Spring Data JPA & Hibernate entity mapping across 9 domain models",
     ],
-    techStack: ["Java 17", "Spring Boot", "Spring Data JPA", "MySQL", "REST API"],
+    techStack: ["Java 17", "Spring Boot", "Spring Data JPA", "Hibernate", "MySQL", "REST API"],
     githubUrl: "https://github.com/Lrssrrb/Online-shopping-application",
   },
   {
@@ -146,3 +146,4 @@ export const educationList = [
     degree: "Bachelor of Technology - Computer Science",
   },
 ];
+
