@@ -566,3 +566,27 @@
 .welcome-hero {
   padding-top: 80px !important;
 }
+
+.profiles .row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.profiles .row > [class*="col-"] {
+  display: flex;
+  margin-bottom: 30px;
+}
+
+.backend-project-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  margin-bottom: 0 !important;
+}
+
+.project-card-footer {
+  margin-top: auto;
+  padding-top: 16px;
+}
